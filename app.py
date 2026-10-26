@@ -169,7 +169,7 @@ st.markdown(
     """
 | Annahme | Was passiert, wenn sie verletzt ist | Wer setzt an |
 |---|---|---|
-| **Die Geometrie ist bekannt** | Wer die Koordinaten falsch liest oder nicht kennt, findet kaum noch ans Ziel (Reihe „Geometrie richtig oder falsch gelesen“). | diese Demo |
+| **Die Geometrie ist bekannt** | Wer die Koordinaten falsch liest, findet in den gemessenen Fällen nur noch in 2 bis 38 % der Fälle ans Ziel (Reihe „Geometrie richtig oder falsch gelesen“). | diese Demo |
 | **Die Fernkontakte folgen dem Abstand** | Das beste r hängt von der Gittergröße ab; für große Gitter nennt die Theorie r = 2, bei kleinen liegt das Minimum darunter (Reihe „Wo liegt das beste r?“). | diese Demo |
 | **Ein Netz mit Koordinaten** | Reale Netze haben meist keine bekannten Koordinaten; ob und wie sich solche aus dem Netz schätzen lassen, prüft diese Demo nicht. | Netze im Raum (Folgestück) |
 | **Dezentral heißt nur nahe Nachbarn** | Wer mehr als die Nachbarn kennt (Ortskenntnis, Hinweise), kann besser suchen; die Greedy-Suche ist die einfachste Strategie. | Modellwahl (Folgestück) |
@@ -197,7 +197,7 @@ $$P(v \mid u) = \frac{d(u,v)^{-r}}{\sum_{w \ne u} d(u,w)^{-r}}.$$
 
 **Greedy-Suche.** Von der aktuellen Stelle $x$ zum Ziel $t$ zu dem Nachbarn (einschließlich Fernkontakt), der $d(\cdot, t)$ minimiert. Ein Gitternachbar hat immer einen kleineren Abstand, die Suche gelingt also immer, und die Zahl der Schritte ist höchstens $d(s,t)$.
 
-**Theorie** (aus dem Gedächtnis, nicht im Original geprüft): für $r = 2$ braucht die Greedy-Suche im Mittel $O(\log^2 n)$ Schritte, für andere $r$ wächst die Schrittzahl polynomial in $n$ (für $r < 2$ etwa wie $n^{(2-r)/3}$, für $r > 2$ wie $n^{(r-2)/(r-1)}$). Das sind Aussagen für $n \to \infty$; die Messreihe zeigt, wo das Minimum bei endlichem $L$ liegt.
+**Theorie** (aus dem Gedächtnis, nicht im Original geprüft): für $r = 2$ braucht die Greedy-Suche im Mittel $O(\log^2 n)$ Schritte, für andere $r$ wächst die Schrittzahl mindestens polynomial in der Seitenlänge $L$ (für $r < 2$ mindestens wie $L^{(2-r)/3}$, für $r > 2$ mindestens wie $L^{(r-2)/(r-1)}$; $n = L^2$). Das sind Aussagen für $n \to \infty$; die Messreihe zeigt, wo das Minimum bei endlichem $L$ liegt.
 
 **Hyperbolischer Zufallsgraph** (Temperatur null). $n$ Punkte mit Winkel $\theta$ gleichverteilt auf $[0, 2\pi)$ und Radius $r$ mit Dichte $\propto \sinh(\alpha r)$ auf $[0, R]$. Hyperbolischer Abstand:
 
